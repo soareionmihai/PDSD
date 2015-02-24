@@ -24,6 +24,11 @@ public class MainActivity extends Activity {
 			EditText userNameEditText = (EditText)findViewById(R.id.user_name_edit_text);
 			TextView greetingTextView = (TextView)findViewById(R.id.greeting_text_view);
 			greetingTextView.setAlpha(1);
+			greetingTextView.setText(greetingTextView.getText().toString().replaceAll("xxx", userNameEditText.getText().toString()));
+			AlphaAnimation Alphaanime = new AlphaAnimation(1.0f, 0.0f);
+			 Alphaanime.setDuration(TRANSPARENCY_EFFECT_DURATION);
+			 Alphaanime.setFillAfter(true);
+			 greetingTextView.setAnimation(Alphaanime);
 		}
 		
 	}
